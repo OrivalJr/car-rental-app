@@ -1,0 +1,36 @@
+{
+  "staging": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-rentalapp-staging-5a955-authRole",
+      "UnauthRoleArn": "arn:aws:iam::944472297482:role/amplify-rentalapp-staging-5a955-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::944472297482:role/amplify-rentalapp-staging-5a955-authRole",
+      "Region": "us-west-2",
+      "DeploymentBucketName": "amplify-rentalapp-staging-5a955-deployment",
+      "UnauthRoleName": "amplify-rentalapp-staging-5a955-unauthRole",
+      "StackName": "amplify-rentalapp-staging-5a955",
+      "StackId": "arn:aws:cloudformation:us-west-2:944472297482:stack/amplify-rentalapp-staging-5a955/b374da00-9fa3-11ef-beef-026d84c8c7a7",
+      "AmplifyAppId": "d239astnub2cuz"
+    },
+    "categories": {
+      "api": {
+        "rentalapp": {},
+        "apiProject": {}
+      },
+      "auth": {
+        "rentalapp6da9af34": {}
+      },
+      "function": {
+        "lbdapp": {
+          "deploymentBucketName": "amplify-rentalapp-staging-5a955-deployment",
+          "s3Key": "amplify-builds/lbdapp-74454751634c7a644f4f-build.zip"
+        }
+      },
+      "storage": {
+        "tblcondom": {}
+      },
+      "hosting": {
+        "S3AndCloudFront": {}
+      }
+    }
+  }
+}

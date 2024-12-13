@@ -1,0 +1,14 @@
+{
+  "resourceName": "tblcondom",
+  "tableName": "tblcondom",
+  "partitionKey": {
+    "fieldName": "ID",
+    "fieldType": "number"
+  },
+  "sortKey": {
+    "fieldName": "nome",
+    "fieldType": "string"
+  },
+  "gsi": [],
+  "triggerFunctions": []
+}

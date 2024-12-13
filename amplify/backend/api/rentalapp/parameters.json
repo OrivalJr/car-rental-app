@@ -1,0 +1,6 @@
+{
+  "AppSyncApiName": "rentalapp",
+  "DynamoDBBillingMode": "PAY_PER_REQUEST",
+  "DynamoDBEnableServerSideEncryption": false,
+  "AuthModeLastUpdated": "2024-11-10T22:45:21.043Z"
+}

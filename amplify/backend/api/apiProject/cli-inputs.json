@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "paths": {
+    "/road": {
+      "name": "/road",
+      "lambdaFunction": "lbdapp",
+      "permissions": {
+        "setting": "open"
+      }
+    }
+  }
+}

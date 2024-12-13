@@ -1,0 +1,116 @@
+{
+  "api": {
+    "apiProject": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "lbdapp"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway"
+    },
+    "rentalapp": {
+      "dependsOn": [],
+      "output": {
+        "authConfig": {
+          "additionalAuthenticationProviders": [
+            {
+              "authenticationType": "AWS_IAM"
+            }
+          ],
+          "defaultAuthentication": {
+            "apiKeyConfig": {
+              "apiKeyExpirationDays": 30,
+              "description": "api key description"
+            },
+            "authenticationType": "API_KEY"
+          }
+        }
+      },
+      "providerPlugin": "awscloudformation",
+      "service": "AppSync"
+    }
+  },
+  "auth": {
+    "rentalapp6da9af34": {
+      "customAuth": false,
+      "dependsOn": [],
+      "frontendAuthConfig": {
+        "mfaConfiguration": "OFF",
+        "mfaTypes": [
+          "SMS"
+        ],
+        "passwordProtectionSettings": {
+          "passwordPolicyCharacters": [],
+          "passwordPolicyMinLength": 8
+        },
+        "signupAttributes": [
+          "EMAIL"
+        ],
+        "socialProviders": [],
+        "usernameAttributes": [],
+        "verificationMechanisms": [
+          "EMAIL"
+        ]
+      },
+      "providerPlugin": "awscloudformation",
+      "service": "Cognito"
+    }
+  },
+  "function": {
+    "lbdapp": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributeEnvMap": {
+            "Arn": "TABLE_ARN",
+            "Name": "TABLE_NAME"
+          },
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "storage",
+          "resourceName": "tblcondom"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "hosting": {
+    "S3AndCloudFront": {
+      "providerPlugin": "awscloudformation",
+      "service": "S3AndCloudFront"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_function_lbdapp_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "lbdapp"
+        }
+      ]
+    },
+    "AMPLIFY_function_lbdapp_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "lbdapp"
+        }
+      ]
+    }
+  },
+  "storage": {
+    "tblcondom": {
+      "providerPlugin": "awscloudformation",
+      "service": "DynamoDB"
+    }
+  }
+}

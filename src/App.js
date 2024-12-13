@@ -1,25 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
+import "@aws-amplify/ui-react/styles.css";
+import {
+  withAuthenticator,
+  Button,
+  Heading,
+  View,
+  Card,
+} from "@aws-amplify/ui-react";
 
-function App() {
+import {
+  NavBarHeader2 
+ } from './ui-components';
+
+ import {
+  ItemCardCollection 
+ } from './ui-components';
+
+ import {
+  BlogCreateForm 
+ } from './ui-components';
+
+ import {
+  PostCreateForm 
+ } from './ui-components';
+
+
+function App({ signOut }) {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <View className="App">
+      <Card>
+        <Heading level={1}>HARCO - Gestão de Condomínios</Heading>
+        <NavBarHeader2/>
+        <Heading level={2}>Condomínios</Heading>
+        <BlogCreateForm/>
+        <Heading level={2}>Estrutura</Heading>
+        <PostCreateForm/>
+        <ItemCardCollection/>
+      </Card>
+      <Button onClick={signOut}>Sign Out</Button>
+    </View>
   );
 }
 
-export default App;
+export default withAuthenticator(App);
